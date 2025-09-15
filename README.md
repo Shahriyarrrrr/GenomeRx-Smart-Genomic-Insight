@@ -1,41 +1,3 @@
-### 🔑 Authentication
-
-#### Login Page
-![Login Page](01_GenomeRx_Login_Page.jpg)
-
-#### Create Account
-![Create Account](02_GenomeRx_Create_Account_Page.jpg)
-
-#### Role Dropdown
-![Role Dropdown](03_GenomeRx_Create_Account_Role_Dropdown.jpg)
-
-#### Account Success
-![Account Success](04_GenomeRx_Create_Account_Success.jpg)
-When you push this README to GitHub → it will render like this:
-
-Section title ✅
-
-Subtitle (Login Page, etc.) ✅
-
-The actual screenshot image displayed below ✅
-
-⚡ Do you want me to finalize and give you the rewritten README with every screenshot embedded (so you just copy-paste it as README.md and push)?
-
-
-
-
-
-You said:
-finalize and give ME the rewritten README with every screenshot embedded (so you just copy-paste it as README.md and push)?
-
-
-ChatGPT said:
-Perfect 🔥 I’ll finalize the complete README.md with every screenshot embedded so you can copy-paste it directly.
-
-Here’s the ready-to-use README.md:
-
-markdown
-Copy code
 # GenomeRx – Smart Genomic Insight for Antibiotic Selection
 
 ## 📌 Project Overview
@@ -47,16 +9,16 @@ This system was developed as part of an academic software engineering project to
 ---
 
 ## 🚀 Key Features
-- 🔐 **Role-based Authentication** – Admin, Doctor, Researcher, Lab Staff
-- 📂 **Genome Upload** – Supports FASTA, CSV, PDF with validation
-- 🤖 **AMR Prediction** – Uses **Random Forest** and **SVM** ML models with confidence scores
-- 💊 **Top-3 Antibiotic Recommendations** – Based on prediction results
-- 📊 **Visualization** – Confidence charts, resistance gene matches, history tracking
-- 📝 **Clinical Reports** – Exportable to PDF with notes & tags
-- 📜 **Task & Calendar Management** – Assign tasks, set deadlines, manage lab activities
-- 💬 **Internal Chat** – Role-based direct messaging
-- ⚙️ **Admin Tools** – User management, password reset, deactivate accounts
-- 🌗 **Light/Dark Theme Support**
+- 🔐 **Role-based Authentication** – Admin, Doctor, Researcher, Lab Staff  
+- 📂 **Genome Upload** – Supports FASTA, CSV, PDF with validation  
+- 🤖 **AMR Prediction** – Uses **Random Forest** and **SVM** ML models with confidence scores  
+- 💊 **Top-3 Antibiotic Recommendations** – Based on prediction results  
+- 📊 **Visualization** – Confidence charts, resistance gene matches, history tracking  
+- 📝 **Clinical Reports** – Exportable to PDF with notes & tags  
+- 📜 **Task & Calendar Management** – Assign tasks, set deadlines, manage lab activities  
+- 💬 **Internal Chat** – Role-based direct messaging  
+- ⚙️ **Admin Tools** – User management, password reset, deactivate accounts  
+- 🌗 **Light/Dark Theme Support**  
 
 ---
 
@@ -206,11 +168,10 @@ Copy code
 
 ---
 
-✅ Steps for you now:  
-1. Create a file named `README.md` in the root of your project.  
-2. Paste the above content inside.  
-3. Run:  
+✅ Next Steps:  
+1. Copy this into `README.md` at your repo root.  
+2. Run:  
 ```bash
 git add README.md
-git commit -m "Add full professional README with embedded screenshots"
+git commit -m "Final professional README with embedded screenshots"
 git push
