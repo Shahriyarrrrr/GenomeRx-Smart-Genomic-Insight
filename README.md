@@ -11,11 +11,11 @@ This system was developed as part of an academic software engineering project to
 ## 🚀 Key Features
 - 🔐 **Role-based Authentication** – Admin, Doctor, Researcher, Lab Staff  
 - 📂 **Genome Upload** – Supports FASTA, CSV, PDF with validation  
-- 🤖 **AMR Prediction** – Uses **Random Forest** and **SVM** ML models with confidence scores  
+- 🤖 **AMR Prediction** – Random Forest & SVM models with confidence scores  
 - 💊 **Top-3 Antibiotic Recommendations** – Based on prediction results  
 - 📊 **Visualization** – Confidence charts, resistance gene matches, history tracking  
 - 📝 **Clinical Reports** – Exportable to PDF with notes & tags  
-- 📜 **Task & Calendar Management** – Assign tasks, set deadlines, manage lab activities  
+- 📜 **Task & Calendar Management** – Assign tasks, schedule, deadlines  
 - 💬 **Internal Chat** – Role-based direct messaging  
 - ⚙️ **Admin Tools** – User management, password reset, deactivate accounts  
 - 🌗 **Light/Dark Theme Support**  
@@ -25,9 +25,8 @@ This system was developed as part of an academic software engineering project to
 ## 🛠️ Tech Stack
 - **Frontend:** React (Vite, TailwindCSS, ShadCN/UI, Lucide Icons, Recharts, Framer Motion)  
 - **Backend:** FastAPI (Python)  
-- **Machine Learning:** Random Forest, SVM (scikit-learn)  
+- **Machine Learning:** scikit-learn (Random Forest, SVM)  
 - **Database:** SQLite / MySQL  
-- **UI Prototype:** Figma + custom design  
 - **Version Control:** Git & GitHub  
 
 ---
@@ -53,21 +52,21 @@ Copy code
 ```bash
 git clone https://github.com/Shahriyarrrrr/GenomeRx-Smart-Genomic-Insight.git
 cd GenomeRx-Smart-Genomic-Insight
-2️⃣ Setup Backend (FastAPI)
+2️⃣ Backend (FastAPI)
 bash
 Copy code
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-3️⃣ Setup Frontend (React)
+3️⃣ Frontend (React)
 bash
 Copy code
 cd frontend
 npm install
 npm run dev
-4️⃣ Access Application
-Open browser at: http://localhost:5173 (frontend)
-Backend runs at: http://localhost:8000
+4️⃣ Access
+Frontend: http://localhost:5173
+Backend: http://localhost:8000
 
 📖 Usage Workflow
 Login/Register with a role (Admin, Doctor, Researcher, Lab Staff).
@@ -80,82 +79,114 @@ View Antibiotic Recommendations and resistance genes.
 
 Generate PDF Report for clinical decision support.
 
-Admin can manage users, reset passwords, assign tasks.
-
-Researchers & Lab Staff can collaborate via tasks, calendar, and chat.
+Admin manages users & permissions; teams collaborate via tasks, calendar, and chat.
 
 📸 Screenshots
+All images use raw GitHub links to ensure they render correctly.
+
 🔑 Authentication
 Login Page
 
+
 Create Account
+
 
 Role Dropdown
 
+
 Account Success
+
 
 📊 Dashboards
 Admin Dashboard
 
+
 Admin Dashboard (Dark Mode)
+
 
 Doctor Dashboard
 
+
 Lab Staff Dashboard
 
+
 Researcher Dashboard
+
 
 🧬 Genome Analysis
 Upload Genome
 
+
 File Dialog
+
 
 Upload Progress
 
+
 Prediction Results
+
 
 Clinical Report
 
+
 Notes & Tags
+
 
 Print Report (PDF Export)
 
+
 PDF Viewer Comparison
+
+
+👤 Account & Profile
+My Profile Page
+
 
 📂 History
 Prediction History
 
+
 Lab Staff Prediction History
+
 
 📅 Task & Calendar
 Tasks Page
 
+
 New Task Modal
+
 
 Calendar View
 
+
 Edit Event
+
 
 Doctor Tasks Page
 
+
 Lab Staff Assigned Tasks
+
 
 👨‍💻 Admin Tools
 User Management
 
+
 User Access Modal
+
 
 💬 Chat
 Direct Message
 
+
 🤝 Contribution
 Fork the repository
 
-Create a new feature branch (git checkout -b feature-name)
+Create a feature branch (git checkout -b feature-name)
 
-Commit changes (git commit -m "Added new feature")
+Commit changes (git commit -m "Add feature")
 
-Push to branch (git push origin feature-name)
+Push (git push origin feature-name)
 
 Open a Pull Request
 
@@ -163,15 +194,13 @@ Open a Pull Request
 This project is developed for academic/demo purposes and is not intended for clinical use.
 MIT License © 2025 GenomeRx Team
 
-yaml
+sql
 Copy code
 
----
-
-✅ Next Steps:  
-1. Copy this into `README.md` at your repo root.  
-2. Run:  
+**How to apply:**
+1. Replace your repo’s `README.md` with the content above.  
+2. Commit & push:
 ```bash
 git add README.md
-git commit -m "Final professional README with embedded screenshots"
+git commit -m "README with raw GitHub image links"
 git push
