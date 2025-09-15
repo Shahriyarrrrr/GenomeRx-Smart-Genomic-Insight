@@ -1,0 +1,7 @@
+									WELCOME TO MY GENOMERX
+
+DEFAULT ADMIN ID AND PASSWORD :: Default admin → admin@genomerx.local / Admin@123
+
+FIRST RUN : .venv\Scripts\activate
+
+TO RUN THE LOCAL SERVER IN CMD: uvicorn app.main:app --reload --port 8000
