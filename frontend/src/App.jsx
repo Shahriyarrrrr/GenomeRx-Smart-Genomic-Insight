@@ -36,7 +36,19 @@ import ChatView from "./components/ChatView";
    ========================= */
 
 // prefer local FastAPI whenever the UI itself is loaded from localhost/127.0.0.1
-const API_BASE = import.meta.env.VITE_API_BASE?.trim() || "https://genomerx-smart-genomic-insight.onrender.com";
+// -----------------------------------------------------------------------
+// API_BASE — priority:
+//   1. Local dev       → local FastAPI at 127.0.0.1:8000
+//   2. VITE_API_BASE   → Netlify env var (baked in at build time)
+//   3. Hard fallback   → live Render URL (NEVER falls back to localhost!)
+// -----------------------------------------------------------------------
+const RENDER_BACKEND = "https://genomerx-smart-genomic-insight.onrender.com";
+const API_BASE = (() => {
+  const isLocalUI = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+  if (isLocalUI) return "http://127.0.0.1:8000";
+  const envBase = (import.meta?.env?.VITE_API_BASE ?? "").trim();
+  return envBase || RENDER_BACKEND;
+})();
 
 console.log("GenomeRx API_BASE =>", API_BASE);
 
