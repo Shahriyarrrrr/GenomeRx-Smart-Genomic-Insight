@@ -1,12 +1,7 @@
+import os
 from typing import List
 from fastapi import FastAPI, UploadFile, File, HTTPException
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # TEMP FIX (for testing)
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+from fastapi.middleware.cors import CORSMiddleware
 
 from .schemas import PredictResponse
 from .predict_service import run_predict
@@ -14,17 +9,28 @@ from .db import init_db, add_prediction, list_predictions
 
 app = FastAPI(title="GenomeRx AMR API", version="0.3.0")
 
-# CORS for local dev (add more origins as needed)
-ALLOWED_ORIGINS = [
-    "http://localhost:5173", "http://127.0.0.1:5173",
-    "http://localhost:3000", "http://127.0.0.1:3000",
-    "http://localhost", "http://127.0.0.1",
-]
+# -----------------------------------------------------------------------
+# CORS
+# -----------------------------------------------------------------------
+# Read from env var ALLOWED_ORIGINS (comma-separated list of URLs).
+# Defaults to "*" so the Netlify frontend can always reach the backend.
+#
+# To lock it down, set this env var in Render:
+#   ALLOWED_ORIGINS=https://your-site.netlify.app,http://localhost:5173
+# -----------------------------------------------------------------------
+_raw = os.environ.get("ALLOWED_ORIGINS", "*").strip()
+
+if _raw == "*":
+    ALLOWED_ORIGINS = ["*"]
+    _allow_creds = False   # credentials flag must be False when origin is "*"
+else:
+    ALLOWED_ORIGINS = [o.strip() for o in _raw.split(",") if o.strip()]
+    _allow_creds = True
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
+    allow_credentials=_allow_creds,
     allow_methods=["*"],
     allow_headers=["*"],
 )
