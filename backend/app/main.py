@@ -1,6 +1,12 @@
 from typing import List
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # TEMP FIX (for testing)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 from .schemas import PredictResponse
 from .predict_service import run_predict
