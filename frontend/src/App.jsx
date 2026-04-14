@@ -36,14 +36,7 @@ import ChatView from "./components/ChatView";
    ========================= */
 
 // prefer local FastAPI whenever the UI itself is loaded from localhost/127.0.0.1
-const API_BASE = (() => {
-  const isLocalUI = ["localhost", "127.0.0.1"].includes(window.location.hostname);
-  if (isLocalUI) return "http://127.0.0.1:8000";
-
-  // otherwise honor Vite env (e.g. docker/prod), but still fall back to localhost
-  const envBase = (import.meta?.env?.VITE_API_BASE ?? "").trim();
-  return envBase || "http://127.0.0.1:8000";
-})();
+const API_BASE = import.meta.env.VITE_API_BASE?.trim() || "https://genomerx-smart-genomic-insight.onrender.com";
 
 console.log("GenomeRx API_BASE =>", API_BASE);
 
